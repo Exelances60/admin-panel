@@ -7,7 +7,7 @@ const Navigation = () => {
 
   return (
     <div
-      className={`flex w-[100%] h-[100vh] ease-in duration-300 delay-75  ${
+      className={`flex w-[100%] h-[100vh] ease-in duration-300 delay-75 z-40  ${
         open ? "bg-black bg-opacity-80" : null
       }`}
     >

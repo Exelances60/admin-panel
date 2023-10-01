@@ -24,6 +24,8 @@ const LeftOpenMenu: FC<LeftOpenMenuProps> = ({ open, setOpen }) => {
           alignItems: "center",
           justifyContent: "center",
           display: { xs: "flex", md: "flex", lg: "none" },
+          mt: "2.3rem",
+          ml: "1rem",
         }}
         onClick={() => {
           setOpen(!open);
