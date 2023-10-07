@@ -4,23 +4,23 @@ import { Bar } from "@ant-design/charts";
 const LineCharts = () => {
   const data = [
     {
-      year: "1951 年",
+      year: "Ocak",
       value: 38,
     },
     {
-      year: "1952 年",
+      year: "Şubat",
       value: 52,
     },
     {
-      year: "1956 年",
+      year: "Mart",
       value: 61,
     },
     {
-      year: "1957 年",
+      year: "Nisan",
       value: 145,
     },
     {
-      year: "1958 年",
+      year: "Mayıs",
       value: 48,
     },
   ];

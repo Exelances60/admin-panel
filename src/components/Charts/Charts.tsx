@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import BarChart from "../../pages/Home/BarChart/BarChart";
 import { FC } from "react";
 import LineCharts from "../LineCharts/LineCharts";
+import DonutCharts from "../DonutChats/DonutCharts";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -29,15 +30,30 @@ type Props = {
 const Charts: FC<Props> = ({ chartData }) => {
   return (
     <>
-      <Grid container spacing={2} sx={{ marginTop: "10px" }}>
-        <Grid item xs={8}>
+      <Grid
+        sx={{ marginTop: "10px" }}
+        container
+        spacing={{ xs: 1, sm: 1, md: 2 }}
+        rowSpacing={2}
+      >
+        <Grid item xs={12} sm={6}>
           <Item>
             <BarChart chartData={chartData} />
           </Item>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6}>
           <Item>
-            <LineCharts></LineCharts>
+            <LineCharts />
+          </Item>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Item>
+            <BarChart chartData={chartData} />
+          </Item>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Item>
+            <DonutCharts />
           </Item>
         </Grid>
       </Grid>

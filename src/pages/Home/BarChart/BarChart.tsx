@@ -25,7 +25,11 @@ const BarChart: FC<Props> = ({ chartData }) => {
     },
   };
 
-  return <Bar data={chartData} options={option} />;
+  return (
+    <div className="w-full h-[100%]">
+      <Bar data={chartData} options={option} />;
+    </div>
+  );
 };
 
 export default BarChart;
