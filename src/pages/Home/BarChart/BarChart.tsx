@@ -27,7 +27,7 @@ const BarChart: FC<Props> = ({ chartData }) => {
 
   return (
     <div className="w-full h-[100%]">
-      <Bar data={chartData} options={option} />;
+      <Bar data={chartData} options={option} />
     </div>
   );
 };

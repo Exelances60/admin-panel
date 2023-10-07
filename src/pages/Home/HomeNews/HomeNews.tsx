@@ -2,32 +2,19 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import BarChart from "../../pages/Home/BarChart/BarChart";
-import { FC } from "react";
-import LineCharts from "../LineCharts/LineCharts";
-import DonutCharts from "../DonutChats/DonutCharts";
+import TimeLineComponet from "../TimeLine/TimeLine";
+import LineCharts from "../../../components/LineCharts/LineCharts";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
-  height: "100%",
+  height: "40vh",
   color: theme.palette.text.secondary,
 }));
-type Datasets = {
-  label: string;
-  data: Array<number>;
-  borderWidth: number;
-};
 
-type Props = {
-  chartData: {
-    labels: Array<number>;
-    datasets: Datasets[];
-  };
-};
-const Charts: FC<Props> = ({ chartData }) => {
+const HomeNews = () => {
   return (
     <>
       <Grid
@@ -38,22 +25,12 @@ const Charts: FC<Props> = ({ chartData }) => {
       >
         <Grid item xs={13} sm={6}>
           <Item>
-            <BarChart chartData={chartData} />
-          </Item>
-        </Grid>
-        <Grid item xs={13} sm={6}>
-          <Item>
             <LineCharts />
           </Item>
         </Grid>
         <Grid item xs={13} sm={6}>
           <Item>
-            <BarChart chartData={chartData} />
-          </Item>
-        </Grid>
-        <Grid item xs={13} sm={6}>
-          <Item>
-            <DonutCharts />
+            <TimeLineComponet />
           </Item>
         </Grid>
       </Grid>
@@ -61,4 +38,4 @@ const Charts: FC<Props> = ({ chartData }) => {
   );
 };
 
-export default Charts;
+export default HomeNews;

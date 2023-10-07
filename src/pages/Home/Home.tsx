@@ -6,6 +6,7 @@ import Charts from "../../components/Charts/Charts";
 import { useQuery } from "@tanstack/react-query";
 import { fetchChartsData } from "../../utils/fetchData";
 import { Skeleton } from "antd";
+import HomeNews from "./HomeNews/HomeNews";
 
 type Datasets = {
   label: string;
@@ -58,6 +59,7 @@ const Home = () => {
           <SearchHeader />
           <CompanyDataComponet />
           <Charts chartData={chartData} />
+          <HomeNews />
           <FloatButton.BackTop />
         </>
       )}

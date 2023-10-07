@@ -1,5 +1,3 @@
-// companyDataImport.tsx
-
 import React from "react";
 import AppleIcon from "@mui/icons-material/Apple";
 import AdbIcon from "@mui/icons-material/Adb";
