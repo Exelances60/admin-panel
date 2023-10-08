@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router";
-import LeftOpenMenu from "./components/LeftOpenMenu/LeftOpenMenu";
+import LeftDrawer from "./components/LeftDrawer/LeftDrawer";
 
 const Navigation = () => {
-  const [open, setOpen] = useState<Boolean>(false);
-
   return (
     <div
-      className={`flex w-[100%] h-[100vh] ease-in duration-300 delay-75 z-40  ${
-        open ? "bg-black bg-opacity-80" : null
-      }`}
+      className={`flex w-[100%] h-[100vh] ease-in duration-300 delay-75 z-40`}
     >
-      <LeftOpenMenu setOpen={setOpen} open={open}></LeftOpenMenu>
+      <LeftDrawer></LeftDrawer>
       <div className={`w-full h-[100vh] ease-in duration-300 delay-75`}>
         <Outlet />
       </div>

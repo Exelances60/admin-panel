@@ -30,7 +30,6 @@ const LeftOpenMenu: FC<LeftOpenMenuProps> = ({ open, setOpen }) => {
         onClick={() => {
           setOpen(!open);
         }}
-        className="deneme"
       ></DragHandleIcon>
       <div
         className={`bg-[#ffffff] w-[80%] lg:w-[30%] xl:w-[20%]  md:w-[40%] ] flex flex-col ease-in duration-300 lg:flex lg:flex-col lg:z-50 absolute lg:relative ${

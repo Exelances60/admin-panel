@@ -22,3 +22,9 @@ export const fetchChartsData = async (
     }, 2000);
   });
 };
+
+export const fetchTasksData = async (url: string): Promise<string[]> => {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};

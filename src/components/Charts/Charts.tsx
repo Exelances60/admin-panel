@@ -36,22 +36,22 @@ const Charts: FC<Props> = ({ chartData }) => {
         spacing={{ xs: 1, sm: 1, md: 2 }}
         rowSpacing={2}
       >
-        <Grid item xs={13} sm={6}>
+        <Grid item xs={12} sm={6}>
           <Item>
             <BarChart chartData={chartData} />
           </Item>
         </Grid>
-        <Grid item xs={13} sm={6}>
+        <Grid item xs={12} sm={6}>
           <Item>
             <LineCharts />
           </Item>
         </Grid>
-        <Grid item xs={13} sm={6}>
+        <Grid item xs={12} sm={6}>
           <Item>
             <BarChart chartData={chartData} />
           </Item>
         </Grid>
-        <Grid item xs={13} sm={6}>
+        <Grid item xs={12} sm={6}>
           <Item>
             <DonutCharts />
           </Item>
