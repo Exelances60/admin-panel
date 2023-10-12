@@ -17,5 +17,14 @@
   "Create a services site 2015-09-01": "Bir hizmet sitesi oluşturun 01.09.2015",
   "Solve initial network problems 2015-09-01": "İlk ağ sorunlarını çözün 01.09.2015",
   "Technical testing 2015-09-01": "Teknik test 01.09.2015",
-  "Network problems being solved 2015-09-01": "Ağ sorunları çözülüyor 01.09.2015"
+  "Network problems being solved 2015-09-01": "Ağ sorunları çözülüyor 01.09.2015",
+  "HOME": "Ana Sayfa",
+  "PROFILE": "Profil",
+  "LOGOUT": "Çıkış Yap",
+  "Dashboard": "Kontrol Paneli",
+  "User": "Kullanıcı",
+  "Product": "Ürün",
+  "Blog": "Blog",
+  "Login": "Giriş Yap",
+  "Not Found": "Bulunamadı"
 }

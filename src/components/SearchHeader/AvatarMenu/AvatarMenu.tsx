@@ -7,6 +7,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 
 type AvatarMenuProps = {
   anchorEl: null | HTMLElement;
@@ -15,6 +16,7 @@ type AvatarMenuProps = {
 };
 
 const AvatarMenu: FC<AvatarMenuProps> = ({ anchorEl, open, handleClose }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   return (
     <>
@@ -65,20 +67,20 @@ const AvatarMenu: FC<AvatarMenuProps> = ({ anchorEl, open, handleClose }) => {
           <ListItemIcon>
             <HomeIcon fontSize="small" />
           </ListItemIcon>
-          Home
+          {t("HOME")}
         </MenuItem>
 
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
-          Profile
+          {t("PROFILE")}
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          {t("LOGOUT")}
         </MenuItem>
       </Menu>
     </>

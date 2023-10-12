@@ -18,5 +18,14 @@
   "Create a services site 2015-09-01": "Create a services site 2015-09-01",
   "Solve initial network problems 2015-09-01": "Solve initial network problems 2015-09-01",
   "Technical testing 2015-09-01": "Technical testing 2015-09-01",
-  "Network problems being solved 2015-09-01": "Network problems being solved 2015-09-01"
+  "Network problems being solved 2015-09-01": "Network problems being solved 2015-09-01",
+  "HOME": "Home",
+  "PROFILE": "Profile",
+  "LOGOUT": "Logout",
+  "Dashboard": "Dashboard",
+  "User": "User",
+  "Product": "Product",
+  "Blog": "Blog",
+  "Login": "Login",
+  "Not Found": "Not Found"
 }

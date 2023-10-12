@@ -3,12 +3,14 @@ import Stack from "@mui/material/Stack";
 
 import { useNavigate } from "react-router";
 import { menuData } from "../../../../routes/routes";
+import { useTranslation } from "react-i18next";
 
 type MenuComponetProps = {
   setOpen?: Dispatch<SetStateAction<Boolean>>;
 };
 
 const MenuComponet: FC<MenuComponetProps> = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   return (
     <>
@@ -23,7 +25,7 @@ const MenuComponet: FC<MenuComponetProps> = () => {
               className="w-[300px] h-[5vh] flex items-center pl-5 box-border rounded-lg  hover:bg-[#f6f7f8] cursor-pointer ease-in duration-200 "
             >
               <p>
-                {<item.componet className="mb-1" />} {item.name}
+                {<item.componet className="mb-1" />} {t(item.name)}
               </p>
             </div>
           );
