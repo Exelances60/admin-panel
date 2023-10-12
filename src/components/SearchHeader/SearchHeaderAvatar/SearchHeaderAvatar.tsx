@@ -7,11 +7,10 @@ import { Fragment, useState, MouseEvent } from "react";
 import Avatars from "../../Avatar/Avatar";
 import AvatarMenu from "../AvatarMenu/AvatarMenu";
 import MailMenu from "../MailMenu/MailMenu";
-import { useNavigate } from "react-router";
+import SelectLanguage from "../SelectLanguage/SelectLanguage";
 
 const SearchHeaderAvatar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const navigate = useNavigate();
   const open = Boolean(anchorEl);
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -22,13 +21,8 @@ const SearchHeaderAvatar = () => {
   return (
     <Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Typography
-          sx={{ minWidth: 100, cursor: "pointer" }}
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Home
+        <Typography sx={{ minWidth: 100, cursor: "pointer" }}>
+          <SelectLanguage />
         </Typography>
         <MailMenu />
         <Tooltip title="Account settings">

@@ -4,6 +4,8 @@ import { routes } from "./routes/routes";
 import Navigation from "./pages/Navigation/Navigation";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import "./utils/i18n/i18n";
+import Login from "./pages/Login/Login";
 
 const queryClient = new QueryClient();
 
@@ -12,12 +14,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="">
         <Routes>
+          <Route path="/" index element={<Login />} />
           <Route path="/" element={<Navigation />}>
-            {routes.map(({ path, component: Component, index }) => {
-              return (
-                <Route path={path} index={index} element={<Component />} />
-              );
-            })}
+            {routes.map(({ path, component: Component }) => (
+              <Route key={path} path={path} element={<Component />} />
+            ))}
           </Route>
         </Routes>
       </div>

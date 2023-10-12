@@ -8,6 +8,9 @@ import { fetchChartsData } from "../../utils/fetchData";
 import { Skeleton } from "antd";
 import HomeNews from "./HomeNews/HomeNews";
 import Task from "./Task/Task";
+import { DefaultStyles } from "../../utils/DefaultStyles/DefaultStyles";
+import withSearchHeader from "../../utils/WrapperWithSearchHeader/withSearchHeader";
+import { useTranslation } from "react-i18next";
 
 type Datasets = {
   label: string;
@@ -16,6 +19,7 @@ type Datasets = {
 };
 
 const Home = () => {
+  const { t } = useTranslation();
   const { data, isLoading } = useQuery(
     ["Chartsdata"],
     () =>
@@ -42,7 +46,7 @@ const Home = () => {
         labels: data.map((label) => label.year),
         datasets: [
           {
-            label: "Company Data",
+            label: t("CompanyData"),
             data: data.map((data) => data.userGain),
             borderWidth: 1,
           },
@@ -52,12 +56,11 @@ const Home = () => {
   }, [data]);
 
   return (
-    <div className="w-full h-full p-3 box-border -z-20 ">
+    <>
       {isLoading ? (
         <Skeleton active />
       ) : (
         <>
-          <SearchHeader />
           <CompanyDataComponet />
           <Charts chartData={chartData} />
           <HomeNews />
@@ -65,8 +68,8 @@ const Home = () => {
           <FloatButton.BackTop />
         </>
       )}
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default withSearchHeader(Home);

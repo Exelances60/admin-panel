@@ -9,14 +9,14 @@ import NotInterestedIcon from "@mui/icons-material/NotInterested";
 import Product from "../pages/Product/Product";
 
 export const routes = [
-  { component: Home, exact: true, index: true },
+  { component: Home, exact: true, path: "/Home" },
   { path: "/dashboard/users", component: Users, exact: true },
   { path: "/dashboard/product", component: Product, exact: true },
 ];
 export const menuData = [
   {
     name: "Dashboard",
-    path: "/",
+    path: "/Home",
     componet: LeaderboardIcon,
   },
   {
@@ -36,7 +36,7 @@ export const menuData = [
   },
   {
     name: "Login",
-    path: "/login",
+    path: "/",
     componet: ShieldIcon,
   },
   {

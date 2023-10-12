@@ -6,8 +6,9 @@ import Typography from "@mui/material/Typography";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { fetchCompanyData } from "../../../utils/fetchData";
 import { companyData } from "../../../store/ComponyData/CompanyReducer";
-import { getIconComponent } from "../../../utils/companyDataİmport/companyDataİmport";
 import { Skeleton } from "antd";
+import { useTranslation } from "react-i18next";
+import { getIconComponent } from "../../../utils/Data/companyDataİmport/companyDataİmport";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -23,6 +24,7 @@ type CompanyDataComponetProps = {
 
 const CompanyDataComponet: FC<CompanyDataComponetProps> = () => {
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
   const { data, isLoading } = useQuery<companyData[]>(
     ["companyData"],
     () =>
@@ -60,7 +62,7 @@ const CompanyDataComponet: FC<CompanyDataComponetProps> = () => {
                   <Typography variant="h4" className="text-2xl  font-bold">
                     {item.count}
                   </Typography>
-                  <Typography className="text-sm">{item.name}</Typography>
+                  <Typography className="text-sm">{t(item.name)}</Typography>
                 </Item>
               </Grid>
             );

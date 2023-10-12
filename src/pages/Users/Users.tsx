@@ -1,13 +1,8 @@
-import React from "react";
-import SearchHeader from "../../components/SearchHeader/SearchHeader";
+import React, { FC } from "react";
+import withSearchHeader from "../../utils/WrapperWithSearchHeader/withSearchHeader";
 
-const Users = () => {
-  return (
-    <div className="w-full h-full p-3 -z-30 box-border ">
-      <SearchHeader />
-      user
-    </div>
-  );
+const Users: FC = () => {
+  return <>asdsad</>;
 };
 
-export default Users;
+export default withSearchHeader(Users);

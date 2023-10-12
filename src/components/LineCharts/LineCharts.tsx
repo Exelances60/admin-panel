@@ -1,26 +1,28 @@
 import React from "react";
 import { Bar } from "@ant-design/charts";
+import { useTranslation } from "react-i18next";
 
 const LineCharts = () => {
+  const { t } = useTranslation();
   const data = [
     {
-      year: "Ocak",
+      year: t("January"),
       value: 38,
     },
     {
-      year: "Şubat",
+      year: t("February"),
       value: 52,
     },
     {
-      year: "Mart",
+      year: t("March"),
       value: 61,
     },
     {
-      year: "Nisan",
+      year: t("April"),
       value: 145,
     },
     {
-      year: "Mayıs",
+      year: t("May"),
       value: 48,
     },
   ];

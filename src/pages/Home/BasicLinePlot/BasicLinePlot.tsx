@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "@ant-design/charts";
+import { useTranslation } from "react-i18next";
 
 const DemoLine = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -21,10 +23,9 @@ const DemoLine = () => {
   const config = {
     data,
     padding: [10, 20, 30, 40],
-    xField: "Date",
-    yField: "scales",
+    xField: t("Date"),
+    yField: t("scales"),
     xAxis: {
-      // type: 'timeCat',
       tickCount: 5,
     },
   };

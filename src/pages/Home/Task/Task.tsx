@@ -4,8 +4,10 @@ import { Checkbox } from "antd";
 import { message } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTasksData } from "../../../utils/fetchData";
+import { useTranslation } from "react-i18next";
 
 const Task = () => {
+  const { t } = useTranslation();
   const { data } = useQuery(
     ["task"],
     () =>
@@ -25,7 +27,7 @@ const Task = () => {
   const success = () => {
     messageApi.open({
       type: "success",
-      content: "This is a success message",
+      content: t("TASK_SUCCESS"),
     });
   };
 
@@ -59,7 +61,7 @@ const Task = () => {
               }}
             >
               <p className={`${checkedTasks[index] ? "line-through" : ""}`}>
-                {task}
+                {t(task)}
               </p>
             </Checkbox>
           ))}
