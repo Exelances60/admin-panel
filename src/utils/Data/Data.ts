@@ -1,3 +1,9 @@
+import AVATAR12 from "../../assets/avatar_12.jpg";
+import AVATAR11 from "../../assets/avatar_2.jpg";
+import AVATAR10 from "../../assets/avatar_22.jpg";
+import AVATAR9 from "../../assets/avatar_23.jpg";
+import AVATAR8 from "../../assets/avatar_5.jpg";
+
 export type ChartDataProps = {
   id: number;
   year: number;
@@ -8,6 +14,15 @@ export type timelineItemsProps = {
   color: string;
   content: string;
 };
+export interface DataType {
+  key: string;
+  name: string;
+  avatar: string;
+  age: number;
+  address: string;
+  position: string;
+  tags: string[];
+}
 
 export const timelineItems: timelineItemsProps[] = [
   {
@@ -52,5 +67,62 @@ export const DonutBarData = [
   {
     type: "demo6",
     value: 5,
+  },
+];
+
+export const TableData: DataType[] = [
+  {
+    key: "1",
+    name: "John Brown",
+    age: 32,
+    position: "Developer",
+    avatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+    address: "New York No. 1 Lake Park",
+    tags: ["nice", "developer"],
+  },
+  {
+    key: "2",
+    name: "Jim Green",
+    age: 42,
+    position: "UX Designer",
+    avatar: AVATAR12,
+    address: "London No. 1 Lake Park",
+    tags: ["loser"],
+  },
+  {
+    key: "4",
+    name: "Joe Black",
+    age: 32,
+    position: "Manager",
+    avatar: AVATAR11,
+    address: "Sydney No. 1 Lake Park",
+    tags: ["cool", "teacher"],
+  },
+  {
+    key: "5",
+    name: "Joe Black",
+    age: 32,
+    avatar: AVATAR10,
+    position: "Manager",
+    address: "Sydney No. 1 Lake Park",
+    tags: ["cool", "teacher"],
+  },
+  {
+    key: "6",
+    name: "Joe Black",
+    age: 32,
+    position: "Team Leader",
+    avatar: AVATAR9,
+    address: "Sydney No. 1 Lake Park",
+    tags: ["cool", "teacher"],
+  },
+  {
+    key: "7",
+    name: "Joe Black",
+    age: 32,
+    avatar: AVATAR8,
+    position: "Developer",
+    address: "Sydney No. 1 Lake Park",
+    tags: ["cool", "teacher"],
   },
 ];

@@ -27,5 +27,12 @@
   "Product": "Product",
   "Blog": "Blog",
   "Login": "Login",
-  "Not Found": "Not Found"
+  "Not Found": "Not Found",
+  "EDİT": "Edit",
+  "DELETE": "Delete",
+  "NICE": "Nice",
+  "DEVELOPER": "Developer",
+  "LOSER": "Loser",
+  "COOL": "Cool",
+  "TEACHER": "Teacher"
 }

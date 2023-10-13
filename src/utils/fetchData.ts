@@ -7,7 +7,7 @@ export const fetchCompanyData = async (url: string): Promise<companyData[]> => {
   return new Promise<companyData[]>((resolve, reject) => {
     setTimeout(() => {
       resolve(data);
-    }, 2000);
+    }, 1000);
   });
 };
 
@@ -19,7 +19,7 @@ export const fetchChartsData = async (
   return new Promise<ChartDataProps[]>((resolve, reject) => {
     setTimeout(() => {
       resolve(data);
-    }, 2000);
+    }, 1000);
   });
 };
 
