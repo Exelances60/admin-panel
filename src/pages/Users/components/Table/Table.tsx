@@ -62,7 +62,7 @@ const columns: ColumnsType<DataType> = [
   {
     title: "Action",
     key: "action",
-    render: (_, record) => (
+    render: (_) => (
       <Space size="middle">
         <a>{i18next.t("EDİT")}</a>
         <a>{i18next.t("DELETE")}</a>
