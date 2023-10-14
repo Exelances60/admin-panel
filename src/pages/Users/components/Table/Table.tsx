@@ -99,7 +99,7 @@ const UserTable = () => {
 
   return (
     <div className="w-full h-[70%] p-10">
-      {contextHolder}
+      {contextHolder}.
       <Table
         className="w-full shadow-lg rounded-lg p-2"
         columns={columns}
