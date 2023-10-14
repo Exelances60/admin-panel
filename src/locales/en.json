@@ -34,5 +34,9 @@
   "DEVELOPER": "Developer",
   "LOSER": "Loser",
   "COOL": "Cool",
-  "TEACHER": "Teacher"
+  "TEACHER": "Teacher",
+  "TASK": "Task",
+  "DELETE_SUCCESS": "Delete completed successfully",
+  "USERS": "Users",
+  "ADD_USER": "Add User"
 }

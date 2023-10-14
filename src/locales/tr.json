@@ -31,5 +31,11 @@
   "DEVELOPER": "Geliştirici",
   "LOSER": "Kaybeden",
   "COOL": "Harika",
-  "TEACHER": "Öğretmen"
+  "DELETE_SUCCESS": "Silme işlemi başarıyla tamamlandı",
+  "TEACHER": "Öğretmen",
+  "EDİT": "Düzenle",
+  "DELETE": "Sil",
+  "TASK": "Görev",
+  "USERS": "Kullanıcılar",
+  "ADD_USER": "Kullanıcı Ekle"
 }

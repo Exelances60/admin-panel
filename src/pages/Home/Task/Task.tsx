@@ -5,6 +5,7 @@ import { message } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTasksData } from "../../../utils/fetchData";
 import { useTranslation } from "react-i18next";
+import { success } from "../../../utils/DefaultStyles/DefaultStyles";
 
 const Task = () => {
   const { t } = useTranslation();
@@ -24,12 +25,6 @@ const Task = () => {
     Array(data?.length).fill(false)
   );
   const [messageApi, contextHolder] = message.useMessage();
-  const success = () => {
-    messageApi.open({
-      type: "success",
-      content: t("TASK_SUCCESS"),
-    });
-  };
 
   const handleCheckboxChange = (index: number) => {
     const updatedCheckedTasks = [...checkedTasks];
@@ -48,7 +43,7 @@ const Task = () => {
       {contextHolder}
       <Grid item xs={12} sm={8}>
         <div className="w-full h-[30vh] mb-5 bg-white rounded-sm flex flex-col p-5 box-border shadow-md">
-          <h2 className="text-3xl font-bold ">Tasks</h2>
+          <h2 className="text-3xl font-bold ">{t("TASK")}</h2>
           {data?.map((task, index) => (
             <Checkbox
               key={index}
@@ -56,7 +51,7 @@ const Task = () => {
               onChange={() => {
                 handleCheckboxChange(index);
                 if (checkedTasks[index] === false) {
-                  success();
+                  success(messageApi, "TASK_SUCCESS");
                 }
               }}
             >
