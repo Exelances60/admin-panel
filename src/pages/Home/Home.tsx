@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SearchHeader from "../../components/SearchHeader/SearchHeader";
 import CompanyDataComponet from "./CompanyDataComponet/CompanyDataComponet";
 import { FloatButton } from "antd";
 import Charts from "../../components/Charts/Charts";
@@ -8,7 +7,6 @@ import { fetchChartsData } from "../../utils/fetchData";
 import { Skeleton } from "antd";
 import HomeNews from "./HomeNews/HomeNews";
 import Task from "./Task/Task";
-import { DefaultStyles } from "../../utils/DefaultStyles/DefaultStyles";
 import withSearchHeader from "../../utils/WrapperWithSearchHeader/withSearchHeader";
 import { useTranslation } from "react-i18next";
 

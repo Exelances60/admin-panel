@@ -38,5 +38,8 @@
   "TASK": "Task",
   "DELETE_SUCCESS": "Delete completed successfully",
   "USERS": "Users",
-  "ADD_USER": "Add User"
+  "ADD_USER": "Add User",
+  "PAGE_NOT_FOUND": "Page not found",
+  "DELETE_CONFIRMATINO": "Are you sure you want to delete?",
+  "CART": "Cart"
 }

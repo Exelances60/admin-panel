@@ -33,8 +33,7 @@ const UserTable = () => {
     confirm({
       title: "Do you want to delete these items?",
       icon: <ExclamationCircleFilled />,
-      content:
-        "When clicked the OK button, this dialog will be closed after 1 second",
+      content: i18next.t("DELETE_CONFIRMATINO"),
       onOk() {
         return new Promise((resolve, reject) => {
           setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
@@ -109,7 +108,7 @@ const UserTable = () => {
   ];
 
   return (
-    <div className="w-full h-[70%] p-10">
+    <div className="md:w-full w-[100vh] h-[70%] p-10">
       {contextHolder}
       <ShowEditModal
         isModalVisible={isModalVisible}
@@ -118,7 +117,7 @@ const UserTable = () => {
         selectedItem={selectedItem}
       />
       <Table
-        className="w-full shadow-lg rounded-lg p-2"
+        className="md:w-full shadow-lg rounded-lg p-2"
         columns={columns}
         dataSource={data}
         pagination={{

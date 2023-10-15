@@ -7,11 +7,13 @@ import BookIcon from "@mui/icons-material/Book";
 import ShieldIcon from "@mui/icons-material/Shield";
 import NotInterestedIcon from "@mui/icons-material/NotInterested";
 import Product from "../pages/Product/Product";
+import NotFound from "../pages/NotFound/NotFound";
 
 export const routes = [
   { component: Home, exact: true, path: "/Home" },
   { path: "/dashboard/users", component: Users, exact: true },
   { path: "/dashboard/product", component: Product, exact: true },
+  { path: "*", component: NotFound, exact: true },
 ];
 export const menuData = [
   {
@@ -41,7 +43,7 @@ export const menuData = [
   },
   {
     name: "Not Found",
-    path: "/notfound",
+    path: "/*",
     componet: NotInterestedIcon,
   },
 ];

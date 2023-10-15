@@ -2,6 +2,16 @@ import i18next from "i18next";
 
 export const DefaultStyles = {
   layout: "w-full h-full p-3 box-border -z-20 ",
+  home: {
+    taskDiv:
+      "w-full h-[30vh] mb-5 bg-white rounded-sm flex flex-col p-5 box-border shadow-md",
+  },
+  card: {
+    cartButton:
+      "fixed bottom-96 right-0 z-10 bg-white text-2xl text-center font-bold flex items-center justify-center rounded-full",
+    cardComponet:
+      "cursor-pointer hover:shadow-xl ease-in duration-200 shadow-md hover:-translate-y-1",
+  },
 };
 
 export const success = (messageApi: any, msg: string) => {

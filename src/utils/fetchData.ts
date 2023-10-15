@@ -28,3 +28,9 @@ export const fetchTasksData = async (url: string): Promise<string[]> => {
   const data = await response.json();
   return data;
 };
+
+export const fetchGetProduct = async (url: string): Promise<any> => {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};

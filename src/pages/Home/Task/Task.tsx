@@ -5,7 +5,10 @@ import { message } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTasksData } from "../../../utils/fetchData";
 import { useTranslation } from "react-i18next";
-import { success } from "../../../utils/DefaultStyles/DefaultStyles";
+import {
+  DefaultStyles,
+  success,
+} from "../../../utils/DefaultStyles/DefaultStyles";
 
 const Task = () => {
   const { t } = useTranslation();
@@ -42,7 +45,7 @@ const Task = () => {
     >
       {contextHolder}
       <Grid item xs={12} sm={8}>
-        <div className="w-full h-[30vh] mb-5 bg-white rounded-sm flex flex-col p-5 box-border shadow-md">
+        <div className={DefaultStyles.home.taskDiv}>
           <h2 className="text-3xl font-bold ">{t("TASK")}</h2>
           {data?.map((task, index) => (
             <Checkbox

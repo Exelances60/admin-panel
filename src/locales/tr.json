@@ -37,5 +37,8 @@
   "DELETE": "Sil",
   "TASK": "Görev",
   "USERS": "Kullanıcılar",
-  "ADD_USER": "Kullanıcı Ekle"
+  "ADD_USER": "Kullanıcı Ekle",
+  "PAGE_NOT_FOUND": "Sayfa Bulunamadı",
+  "DELETE_CONFIRMATINO": "Silmek istediğinize emin misiniz?",
+  "CART": "Sepet"
 }
