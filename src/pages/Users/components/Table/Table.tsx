@@ -5,12 +5,15 @@ import { DataType, TableData } from "../../../../utils/Data/Data";
 import i18next from "i18next";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import { success } from "../../../../utils/DefaultStyles/DefaultStyles";
+import ShowEditModal from "./ShowEditModal/ShowEditModal";
 
 const { confirm } = Modal;
 
 const UserTable = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const [data, setData] = useState<DataType[]>(TableData);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<DataType | null>(null);
 
   const renderTags = (tags: string[]) => {
     return tags.map((tag: string) => (
@@ -88,7 +91,15 @@ const UserTable = () => {
       key: "action",
       render: (item) => (
         <Space size="middle">
-          <p className="cursor-pointer">{i18next.t("EDİT")}</p>
+          <p
+            className="cursor-pointer"
+            onClick={() => {
+              setSelectedItem(item);
+              setIsModalVisible(true);
+            }}
+          >
+            {i18next.t("EDİT")}
+          </p>
           <p className="cursor-pointer" onClick={() => showDeleteConfirm(item)}>
             {i18next.t("DELETE")}
           </p>
@@ -99,7 +110,13 @@ const UserTable = () => {
 
   return (
     <div className="w-full h-[70%] p-10">
-      {contextHolder}.
+      {contextHolder}
+      <ShowEditModal
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+        setData={setData}
+        selectedItem={selectedItem}
+      />
       <Table
         className="w-full shadow-lg rounded-lg p-2"
         columns={columns}

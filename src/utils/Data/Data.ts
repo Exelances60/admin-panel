@@ -22,6 +22,7 @@ export interface DataType {
   address: string;
   position: string;
   tags: string[];
+  [key: string]: any; // for dynamic key yani formFields[input.name] gibi tanımlamalar için
 }
 
 export const timelineItems: timelineItemsProps[] = [
