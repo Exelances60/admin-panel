@@ -29,7 +29,7 @@ const CompanyDataComponet: FC<CompanyDataComponetProps> = () => {
     ["companyData"],
     () =>
       fetchCompanyData(
-        "https://9614fde2-3dd3-4492-a19f-158a8c039c31.mock.pstmn.io/company/data"
+        "https://ad3a6df6-8c9f-49e5-ae35-a460acbb0944.mock.pstmn.io/adminCompanyData"
       ),
     {
       staleTime: Infinity,

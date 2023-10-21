@@ -10,7 +10,7 @@ const Blog = () => {
     ["blog"],
     () =>
       fetchGetBlogData(
-        "https://newsapi.org/v2/everything?q=tesla&from=2023-09-20&sortBy=publishedAt&apiKey=8d86040c5b1d451ba67fce1d43616d12"
+        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8d86040c5b1d451ba67fce1d43616d12"
       ),
     {
       refetchOnWindowFocus: false,

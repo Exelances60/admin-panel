@@ -21,7 +21,7 @@ const Home = () => {
     ["Chartsdata"],
     () =>
       fetchChartsData(
-        "https://49e637ff-67fb-444c-b176-f958a6ee9377.mock.pstmn.io/chartdata/admin"
+        "https://e8cdaa21-e4f2-4003-b87b-34e779d24ef6.mock.pstmn.io/adminPanel/ChartsData"
       ),
     {
       staleTime: Infinity,

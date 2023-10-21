@@ -16,7 +16,7 @@ const Task = () => {
     ["task"],
     () =>
       fetchTasksData(
-        "https://6f970cd2-f70c-42c1-90b8-d206baeea5a8.mock.pstmn.io/taskData"
+        "https://cf5d9fe0-90a9-40f3-b0c0-6dfa251a3e48.mock.pstmn.io/adminPanel/task"
       ),
     {
       refetchOnWindowFocus: true,
