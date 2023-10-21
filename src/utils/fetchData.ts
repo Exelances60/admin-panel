@@ -1,3 +1,4 @@
+import { ComponentType, lazy, startTransition } from "react";
 import { companyData } from "../store/ComponyData/CompanyReducer";
 import { ChartDataProps } from "./Data/Data";
 

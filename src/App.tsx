@@ -1,26 +1,28 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./routes/routes";
-import Navigation from "./pages/Navigation/Navigation";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./utils/i18n/i18n";
-import Login from "./pages/Login/Login";
+import CircleLoading from "./components/CircleLoading/CircleLoading";
+const Login = React.lazy(() => import("./pages/Login/Login"));
+const Navigation = React.lazy(() => import("./pages/Navigation/Navigation"));
 
 const queryClient = new QueryClient();
-
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="">
-        <Routes>
-          <Route path="/" index element={<Login />} />
-          <Route path="/" element={<Navigation />}>
-            {routes.map(({ path, component: Component }) => (
-              <Route key={path} path={path} element={<Component />} />
-            ))}
-          </Route>
-        </Routes>
+        <Suspense fallback={<CircleLoading></CircleLoading>}>
+          <Routes>
+            <Route path="/" index element={<Login />} />
+            <Route path="/" element={<Navigation />}>
+              {routes.map(({ path, component: Component }) => (
+                <Route key={path} path={path} element={<Component />} />
+              ))}
+            </Route>
+          </Routes>
+        </Suspense>
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
