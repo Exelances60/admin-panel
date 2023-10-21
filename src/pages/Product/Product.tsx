@@ -3,7 +3,6 @@ import withSearchHeader from "../../utils/WrapperWithSearchHeader/withSearchHead
 import { useQuery } from "@tanstack/react-query";
 import { fetchGetProduct } from "../../utils/fetchData";
 import ProductGrid from "./ProductGrid/ProductGrid";
-import { FloatButton } from "antd";
 
 const Product = () => {
   const { data } = useQuery(
@@ -17,7 +16,6 @@ const Product = () => {
   return (
     <>
       <ProductGrid data={data} />
-      <FloatButton.BackTop />
     </>
   );
 };

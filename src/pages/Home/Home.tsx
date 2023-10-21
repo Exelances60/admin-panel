@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CompanyDataComponet from "./CompanyDataComponet/CompanyDataComponet";
-import { FloatButton } from "antd";
 import Charts from "../../components/Charts/Charts";
 import { useQuery } from "@tanstack/react-query";
 import { fetchChartsData } from "../../utils/fetchData";
@@ -63,7 +62,6 @@ const Home = () => {
           <Charts chartData={chartData} />
           <HomeNews />
           <Task />
-          <FloatButton.BackTop />
         </>
       )}
     </>

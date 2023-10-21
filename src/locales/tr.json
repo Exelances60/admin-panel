@@ -40,5 +40,8 @@
   "ADD_USER": "Kullanıcı Ekle",
   "PAGE_NOT_FOUND": "Sayfa Bulunamadı",
   "DELETE_CONFIRMATINO": "Silmek istediğinize emin misiniz?",
-  "CART": "Sepet"
+  "CART": "Sepet",
+  "AUTHOR": "Yazar :",
+  "DATE": "Tarih :",
+  "GO_TO_BLOG": "Blog'a Git"
 }

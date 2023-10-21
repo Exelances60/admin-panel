@@ -61,7 +61,7 @@ const AvatarMenu: FC<AvatarMenuProps> = ({ anchorEl, open, handleClose }) => {
         <MenuItem
           onClick={handleClose}
           onClickCapture={() => {
-            navigate("/");
+            navigate("/Home");
           }}
         >
           <ListItemIcon>
@@ -76,7 +76,12 @@ const AvatarMenu: FC<AvatarMenuProps> = ({ anchorEl, open, handleClose }) => {
           </ListItemIcon>
           {t("PROFILE")}
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={handleClose}
+          onClickCapture={() => {
+            navigate("/");
+          }}
+        >
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

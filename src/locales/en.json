@@ -41,5 +41,8 @@
   "ADD_USER": "Add User",
   "PAGE_NOT_FOUND": "Page not found",
   "DELETE_CONFIRMATINO": "Are you sure you want to delete?",
-  "CART": "Cart"
+  "CART": "Cart",
+  "AUTHOR": "Author :",
+  "DATE": "Date :",
+  "GO_TO_BLOG": "Go to Blog"
 }
