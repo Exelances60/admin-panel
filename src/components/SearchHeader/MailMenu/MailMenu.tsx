@@ -1,19 +1,9 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
-import Badge, { BadgeProps } from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MailIcon from "@mui/icons-material/Mail";
-
-const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
-  "& .MuiBadge-badge": {
-    right: -3,
-    top: 13,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: "0 4px",
-  },
-}));
+import { StyledBadgeMailMenu } from "../../../utils/DefaultStyles/DefaultStyles";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -35,9 +25,9 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <StyledBadge badgeContent={3} color="secondary">
+        <StyledBadgeMailMenu badgeContent={3} color="secondary">
           <MailIcon color="action" />
-        </StyledBadge>
+        </StyledBadgeMailMenu>
       </IconButton>
       <Menu
         id="basic-menu"

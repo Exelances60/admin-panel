@@ -1,21 +1,11 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { FC } from "react";
 import LineCharts from "../LineCharts/LineCharts";
 import DonutCharts from "../DonutChats/DonutCharts";
 import BarChart from "../../pages/Home/components/BarChart/BarChart";
 import { Datasets } from "../../types/FetchDataTypes/FetchDataTypes";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  height: "100%",
-  color: theme.palette.text.secondary,
-}));
+import { ItemCharts } from "../../utils/DefaultStyles/DefaultStyles";
 
 type ChartProps = {
   chartData: {
@@ -38,7 +28,7 @@ const Chart: FC<ChartProps> = ({ chartData }) => (
       <DonutCharts />,
     ].map((Component, index) => (
       <Grid key={index} item xs={12} sm={6}>
-        <Item>{Component}</Item>
+        <ItemCharts>{Component}</ItemCharts>
       </Grid>
     ))}
   </Grid>

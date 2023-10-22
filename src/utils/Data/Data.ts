@@ -1,8 +1,8 @@
-import AVATAR12 from "../../assets/avatar_12.jpg";
-import AVATAR11 from "../../assets/avatar_2.jpg";
-import AVATAR10 from "../../assets/avatar_22.jpg";
-import AVATAR9 from "../../assets/avatar_23.jpg";
-import AVATAR8 from "../../assets/avatar_5.jpg";
+import AVATAR12 from "../../assets/Avatar/avatar_12.jpg";
+import AVATAR11 from "../../assets/Avatar/avatar_2.jpg";
+import AVATAR10 from "../../assets/Avatar/avatar_22.jpg";
+import AVATAR9 from "../../assets/Avatar/avatar_23.jpg";
+import AVATAR8 from "../../assets/Avatar/avatar_5.jpg";
 
 export type ChartDataProps = {
   id: number;

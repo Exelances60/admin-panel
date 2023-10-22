@@ -2,18 +2,9 @@ import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { getIconComponent } from "../../../../../utils/Data/companyDataİmport/companyDataİmport";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { companyData } from "../../../../../types/FetchDataTypes/FetchDataTypes";
-
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  height: "25vh",
-  color: theme.palette.text.secondary,
-}));
+import { ItemCompanyGridContainer } from "../../../../../utils/DefaultStyles/DefaultStyles";
 
 type CompanyGridContainerProps = {
   index: number;
@@ -28,7 +19,7 @@ const CompanyGridContainer: FC<CompanyGridContainerProps> = ({
   return (
     <>
       <Grid item xs={6} md={3} lg={3} key={index}>
-        <Item
+        <ItemCompanyGridContainer
           className={`flex flex-col items-center justify-center `}
           style={{
             backgroundColor: item.color,
@@ -40,7 +31,7 @@ const CompanyGridContainer: FC<CompanyGridContainerProps> = ({
             {item.count}
           </Typography>
           <Typography className="text-sm">{t(item.name)}</Typography>
-        </Item>
+        </ItemCompanyGridContainer>
       </Grid>
     </>
   );
