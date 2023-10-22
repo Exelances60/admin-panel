@@ -1,26 +1,5 @@
-import { ComponentType, lazy, startTransition } from "react";
-import { companyData } from "../store/ComponyData/CompanyReducer";
+import { BlogData, companyData } from "../types/FetchDataTypes/FetchDataTypes";
 import { ChartDataProps } from "./Data/Data";
-
-export type articlesType = {
-  author: string;
-  content: string;
-  description: string;
-  publishedAt: string;
-  source: {
-    id?: string;
-    name: string;
-  };
-  title: string;
-  url: string;
-  urlToImage: string;
-};
-
-export type BlogData = {
-  articles: articlesType[];
-  status: string;
-  totalResults: number;
-};
 
 export const fetchCompanyData = async (url: string): Promise<companyData[]> => {
   const response = await fetch(url);

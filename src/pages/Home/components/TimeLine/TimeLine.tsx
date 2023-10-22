@@ -1,6 +1,6 @@
 import React from "react";
 import { Timeline } from "antd";
-import { timelineItems } from "../../../utils/Data/Data";
+import { timelineItems } from "../../../../utils/Data/Data";
 import { useTranslation } from "react-i18next";
 
 const TimeLineComponet = () => {

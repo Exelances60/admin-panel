@@ -12,6 +12,16 @@ export const DefaultStyles = {
     cardComponet:
       "cursor-pointer hover:shadow-xl ease-in duration-200 shadow-md hover:-translate-y-1",
   },
+  product: {
+    priceP:
+      "product-description overflow-hidden text-ellipsis max-h-12 font-bold text-black text-xl ",
+  },
+  users: {
+    userHeader: {
+      div: "w-full h-[10vh] flex items-center justify-between box-border p-5",
+      h1: "text-2xl font-bold text-black",
+    },
+  },
 };
 
 export const success = (messageApi: any, msg: string) => {

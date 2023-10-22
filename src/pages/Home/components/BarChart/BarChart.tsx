@@ -3,12 +3,8 @@ import { ChartOptions } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { FC } from "react";
 import { Chart, registerables } from "chart.js";
+import { Datasets } from "../../../../types/FetchDataTypes/FetchDataTypes";
 Chart.register(...registerables);
-type Datasets = {
-  label: string;
-  data: Array<number>;
-  borderWidth: number;
-};
 
 export type Props = {
   chartData: {

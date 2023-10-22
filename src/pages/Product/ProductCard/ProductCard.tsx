@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Avatar, Card } from "antd";
-import { dataProps } from "../ProductGrid/ProductGrid";
 import { DefaultStyles } from "../../../utils/DefaultStyles/DefaultStyles";
+import { dataProps } from "../../../types/FetchDataTypes/FetchDataTypes";
 const { Meta } = Card;
 
 type ProductCardProps = {
@@ -28,9 +28,7 @@ const ProductCard: FC<ProductCardProps> = ({ item, setCart }) => {
           avatar={<Avatar src={item.image} />}
           title={item.title}
           description={
-            <p className="product-description overflow-hidden text-ellipsis max-h-12 font-bold text-black text-xl ">
-              ${item.price}
-            </p>
+            <p className={DefaultStyles.product.priceP}>${item.price}</p>
           }
         />
       </Card>

@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Space, Table, Tag, Modal, message } from "antd";
+import { Table, Tag, Modal, message } from "antd";
 import { ColumnsType } from "antd/es/table";
 import { DataType, TableData } from "../../../../utils/Data/Data";
 import i18next from "i18next";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import { success } from "../../../../utils/DefaultStyles/DefaultStyles";
 import ShowEditModal from "./ShowEditModal/ShowEditModal";
+import CollumActionRender from "./CollumActionRender/CollumActionRender";
+import CollumNameRender from "./CollumNameRender/CollumNameRender";
 
 const { confirm } = Modal;
 
 const UserTable = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const [data, setData] = useState<DataType[]>(TableData);
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<DataType | null>(null);
 
   const renderTags = (tags: string[]) => {
@@ -54,14 +56,7 @@ const UserTable = () => {
       dataIndex: "name",
       key: "name",
       render: (text, record) => (
-        <Space>
-          <img
-            src={record.avatar}
-            alt={text}
-            style={{ width: "35px", height: "35px", borderRadius: "50%" }}
-          />
-          <a>{text}</a>
-        </Space>
+        <CollumNameRender text={text} record={record} />
       ),
     },
     {
@@ -89,20 +84,12 @@ const UserTable = () => {
       title: "Action",
       key: "action",
       render: (item) => (
-        <Space size="middle">
-          <p
-            className="cursor-pointer"
-            onClick={() => {
-              setSelectedItem(item);
-              setIsModalVisible(true);
-            }}
-          >
-            {i18next.t("EDİT")}
-          </p>
-          <p className="cursor-pointer" onClick={() => showDeleteConfirm(item)}>
-            {i18next.t("DELETE")}
-          </p>
-        </Space>
+        <CollumActionRender
+          item={item}
+          showDeleteConfirm={showDeleteConfirm}
+          setSelectedItem={setSelectedItem}
+          setIsModalVisible={setIsModalVisible}
+        />
       ),
     },
   ];

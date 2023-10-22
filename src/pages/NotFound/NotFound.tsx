@@ -20,7 +20,7 @@ const NotFound = () => {
               navigate("/Home");
             }}
           >
-            Back Home
+            {t("BACK_HOME")}
           </Button>
         }
       />

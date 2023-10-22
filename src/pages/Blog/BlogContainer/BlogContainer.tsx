@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { articlesType } from "../../../utils/fetchData";
 import BlogCard from "../BlogCard/BlogCard";
 import { Grid } from "@mui/material";
+import { articlesType } from "../../../types/FetchDataTypes/FetchDataTypes";
 
 type BlogContainerProps = {
   articles?: articlesType[];

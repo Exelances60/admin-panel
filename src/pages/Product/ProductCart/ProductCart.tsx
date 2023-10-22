@@ -1,10 +1,10 @@
 import React, { useState, FC } from "react";
 import { Button, Drawer } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import { dataProps } from "../ProductGrid/ProductGrid";
 import ProductCard from "../ProductCard/ProductCard";
 import i18next from "i18next";
 import { DefaultStyles } from "../../../utils/DefaultStyles/DefaultStyles";
+import { dataProps } from "../../../types/FetchDataTypes/FetchDataTypes";
 
 type ProductCartProps = {
   cart: dataProps[];
@@ -12,11 +12,9 @@ type ProductCartProps = {
 
 const ProductCart: FC<ProductCartProps> = ({ cart }) => {
   const [open, setOpen] = useState(false);
-
   const showDrawer = () => {
     setOpen(true);
   };
-
   const onClose = () => {
     setOpen(false);
   };

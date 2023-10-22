@@ -5,9 +5,9 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import { Avatar, Card, MenuProps } from "antd";
-import { articlesType } from "../../../utils/fetchData";
 import { useTranslation } from "react-i18next";
 import BlogCardDropDown from "./BlogCardDropDown/BlogCardDropDown";
+import { articlesType } from "../../../types/FetchDataTypes/FetchDataTypes";
 
 const { Meta } = Card;
 type BlogCardProps = {
@@ -26,6 +26,15 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
       ),
     },
   ];
+
+  const actions = [
+    <SettingOutlined key="setting" />,
+    <EditOutlined key="edit" />,
+    <BlogCardDropDown items={items}>
+      <EllipsisOutlined key="ellipsis" />
+    </BlogCardDropDown>,
+  ];
+
   return (
     <>
       <Card
@@ -37,15 +46,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
             src={article.urlToImage || "https://picsum.photos/200/300"}
           />
         }
-        actions={[
-          <SettingOutlined key="setting" />,
-          <EditOutlined key="edit">asds</EditOutlined>,
-          <BlogCardDropDown items={items}>
-            <span onClick={(e) => e.preventDefault()}>
-              <EllipsisOutlined key="ellipsis" />
-            </span>
-          </BlogCardDropDown>,
-        ]}
+        actions={actions}
       >
         <Meta
           avatar={
@@ -53,21 +54,19 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
           }
           title={article.title}
           description={
-            <p className="product-description overflow-hidden text-ellipsis max-h-28">
-              {article.content}
-            </p>
-          }
-        />
-        <Meta
-          description={
-            <p className="mt-2">
-              <span className="text-xs text-gray-400">{t("AUTHOR")} </span>
-              <span className="text-xs text-gray-600">{article.author}</span>
-              <span className="text-xs text-gray-400 ml-2">{t("DATE")} </span>
-              <span className="text-xs text-gray-600">
-                {article.publishedAt}
-              </span>
-            </p>
+            <>
+              <p className="product-description overflow-hidden text-ellipsis max-h-28">
+                {article.content}
+              </p>
+              <p className="mt-2">
+                <span className="text-xs text-gray-400">{t("AUTHOR")} </span>
+                <span className="text-xs text-gray-600">{article.author}</span>
+                <span className="text-xs text-gray-400 ml-2">{t("DATE")} </span>
+                <span className="text-xs text-gray-600">
+                  {article.publishedAt}
+                </span>
+              </p>
+            </>
           }
         />
       </Card>

@@ -1,36 +1,24 @@
 import React from "react";
 import withSearchHeader from "../../utils/WrapperWithSearchHeader/withSearchHeader";
-import { useQuery } from "@tanstack/react-query";
-import { fetchGetBlogData } from "../../utils/fetchData";
-import { Skeleton } from "antd";
+import { useQueryMinutes } from "../../hooks/useQueryHooks";
 import BlogContainer from "./BlogContainer/BlogContainer";
+import { Skeleton } from "antd";
+import { fetchGetBlogData } from "../../utils/fetchData";
 
 const Blog = () => {
-  const { data, isLoading } = useQuery(
-    ["blog"],
-    () =>
-      fetchGetBlogData(
-        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8d86040c5b1d451ba67fce1d43616d12"
-      ),
-    {
-      refetchOnWindowFocus: false,
-      staleTime: 5000,
-      cacheTime: 5000,
-    }
+  const { data, isLoading } = useQueryMinutes(
+    fetchGetBlogData,
+    "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8d86040c5b1d451ba67fce1d43616d12",
+    "blog"
   );
-  if (isLoading && !data) {
-    return (
-      <div className="w-full h-full ">
-        <Skeleton active></Skeleton>
-      </div>
-    );
-  }
-
-  const { articles } = data || {};
 
   return (
     <>
-      <BlogContainer articles={articles} />
+      {isLoading && !data ? (
+        <Skeleton active />
+      ) : (
+        <BlogContainer articles={data?.articles || []} />
+      )}
     </>
   );
 };

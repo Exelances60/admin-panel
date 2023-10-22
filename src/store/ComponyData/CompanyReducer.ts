@@ -1,12 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-
-export type companyData = {
-  count: string;
-  name: string;
-  component: string;
-  color: string;
-};
+import { companyData } from "../../types/FetchDataTypes/FetchDataTypes";
 
 export type CompanyState = {
   data: companyData[];

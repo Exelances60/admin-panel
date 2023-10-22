@@ -2,16 +2,8 @@ import React, { FC, useState } from "react";
 import { Grid } from "@mui/material";
 import ProductCard from "../ProductCard/ProductCard";
 import ProductCart from "../ProductCart/ProductCart";
+import { dataProps } from "../../../types/FetchDataTypes/FetchDataTypes";
 
-export type dataProps = {
-  category: string;
-  description: string;
-  id: number;
-  image: string;
-  price: number;
-  rating: any;
-  title: string;
-};
 type ProductGridProps = {
   data: dataProps[];
 };
