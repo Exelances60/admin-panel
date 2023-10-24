@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
 import { Avatar, Card, MenuProps } from "antd";
 import { useTranslation } from "react-i18next";
-import BlogCardDropDown from "./BlogCardDropDown/BlogCardDropDown";
 import { articlesType } from "../../../types/FetchDataTypes/FetchDataTypes";
+import { actionDataFuction } from "../../../hooks/useCustomActionData";
 
 const { Meta } = Card;
 type BlogCardProps = {
@@ -26,13 +21,12 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
       ),
     },
   ];
-
-  const actions = [
-    <SettingOutlined key="setting" />,
-    <EditOutlined key="edit" />,
-    <BlogCardDropDown items={items}>
-      <EllipsisOutlined key="ellipsis" />
-    </BlogCardDropDown>,
+  const actions = actionDataFuction(items);
+  const span = [
+    <span className="text-xs text-gray-400">{t("AUTHOR")} </span>,
+    <span className="text-xs text-gray-600">{article.author}</span>,
+    <span className="text-xs text-gray-400 ml-2">{t("DATE")} </span>,
+    <span className="text-xs text-gray-600">{article.publishedAt}</span>,
   ];
 
   return (
@@ -59,12 +53,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
                 {article.content}
               </p>
               <p className="mt-2">
-                <span className="text-xs text-gray-400">{t("AUTHOR")} </span>
-                <span className="text-xs text-gray-600">{article.author}</span>
-                <span className="text-xs text-gray-400 ml-2">{t("DATE")} </span>
-                <span className="text-xs text-gray-600">
-                  {article.publishedAt}
-                </span>
+                {span.map((item, index) => (
+                  <span key={index}>{item}</span>
+                ))}
               </p>
             </>
           }
