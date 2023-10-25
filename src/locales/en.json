@@ -54,5 +54,6 @@
   "The_two_passwords_that_you_entered_do_not_match!": "The two passwords that you entered do not match!",
   "Please_confirm_your_password": "Please confirm your password",
   "The_two_passwords_that_you_entered_do_not_match": "The two passwords that you entered do not match",
-  "Please_input_your_nickname": "Please input your nickname"
+  "Please_input_your_nickname": "Please input your nickname",
+  "login.alreadyHaveAccount": "Already have an account?"
 }
