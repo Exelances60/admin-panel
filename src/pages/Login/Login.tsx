@@ -1,15 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import Register from "./components/Register/Register";
 
 const Login = () => {
-  const navigate = useNavigate();
   return (
-    <div
-      onClick={() => {
-        navigate("/Home");
-      }}
-    >
-      Login
+    <div className="w-full h-[100vh] flex items-center justify-center">
+      <>
+        asdasd
+        <Register />
+      </>
     </div>
   );
 };

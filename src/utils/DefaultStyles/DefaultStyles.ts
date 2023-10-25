@@ -8,7 +8,7 @@ export const DefaultStyles = {
   layout: "w-full h-full p-3 box-border -z-20 ",
   home: {
     taskDiv:
-      "w-full h-[30vh] mb-5 bg-white rounded-sm flex flex-col p-5 box-border shadow-md",
+      "w-full  mb-5 bg-white rounded-sm flex flex-col p-5 box-border shadow-md",
   },
   card: {
     cartButton:
@@ -114,3 +114,27 @@ export const StyledBadgeMailMenu = styled(Badge)<BadgeProps>(({ theme }) => ({
     padding: "0 4px",
   },
 }));
+
+export const formItemLayout = {
+  labelCol: {
+    xs: { span: 24 },
+    sm: { span: 8 },
+  },
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 16 },
+  },
+};
+
+export const tailFormItemLayout = {
+  wrapperCol: {
+    xs: {
+      span: 24,
+      offset: 0,
+    },
+    sm: {
+      span: 16,
+      offset: 8,
+    },
+  },
+};
