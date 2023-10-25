@@ -63,9 +63,7 @@ const SignIn: React.FC<SignInProps> = ({ setOpen }) => {
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
 
-          <a className="login-form-forgot" href="">
-            Forgot password
-          </a>
+          <p className="login-form-forgot">Forgot password</p>
         </Form.Item>
 
         <Form.Item>
