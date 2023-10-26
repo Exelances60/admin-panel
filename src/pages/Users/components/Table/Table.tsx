@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Tag, Modal, message } from "antd";
 import { ColumnsType } from "antd/es/table";
-import { DataType, TableData } from "../../../../utils/Data/Data";
+import { DataType } from "../../../../utils/Data/Data";
 import i18next from "i18next";
 import { ExclamationCircleFilled } from "@ant-design/icons";
 import { success } from "../../../../utils/DefaultStyles/DefaultStyles";
 import ShowEditModal from "./ShowEditModal/ShowEditModal";
 import CollumActionRender from "./CollumActionRender/CollumActionRender";
 import CollumNameRender from "./CollumNameRender/CollumNameRender";
+import { getAllUsers } from "../../../../utils/Firebase/FireBase";
 
 const { confirm } = Modal;
 
 const UserTable = () => {
   const [messageApi, contextHolder] = message.useMessage();
-  const [data, setData] = useState<DataType[]>(TableData);
+  const [data, setData] = useState<DataType[]>([]);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<DataType | null>(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getAllUsers();
+      setData(response);
+    };
+    getData();
+  }, []);
 
   const renderTags = (tags: string[]) => {
     return tags.map((tag: string) => (

@@ -6,7 +6,7 @@ import { inputFields } from "../../../../../utils/Data/companyDataİmport/compan
 type ShowEditModalProps = {
   isModalVisible: boolean;
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setData: React.Dispatch<React.SetStateAction<DataType[]>>;
+  setData?: React.Dispatch<React.SetStateAction<DataType[]>>;
   selectedItem: DataType | null;
 };
 
@@ -35,6 +35,15 @@ const ShowEditModal: FC<ShowEditModalProps> = ({
       [name]: value,
     }));
   };
+  const dataUpdata = () => {
+    if (setData) {
+      setData((prevData) => {
+        return prevData.map((dataItem) => {
+          return dataItem.key === selectedItem?.key ? formFields : dataItem;
+        });
+      });
+    }
+  };
 
   return (
     <>
@@ -43,11 +52,7 @@ const ShowEditModal: FC<ShowEditModalProps> = ({
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         onOk={() => {
-          setData((prevData) => {
-            return prevData.map((dataItem) => {
-              return dataItem.key === selectedItem?.key ? formFields : dataItem;
-            });
-          });
+          dataUpdata();
           setIsModalVisible(false);
         }}
         okButtonProps={{ className: "bg-blue-500 border-none" }}

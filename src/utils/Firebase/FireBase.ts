@@ -5,7 +5,6 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import {
-  DocumentData,
   addDoc,
   collection,
   getDocs,
@@ -13,6 +12,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDNcz7OOXlLBBg5Cu-tfKCIlkLA9TwBpMg",
   authDomain: "admin-panel-daeaa.firebaseapp.com",
@@ -70,6 +70,13 @@ export const loginWithEmailAndPassword = async (
   } catch (error: any) {
     return error.message;
   }
+};
+
+export const getAllUsers = async () => {
+  const querySnapshot = query(collection(dataBase, "Player"));
+  const docs = await getDocs(querySnapshot);
+  const playerData = docs.docs[0].data().data;
+  return playerData;
 };
 
 export default app;
