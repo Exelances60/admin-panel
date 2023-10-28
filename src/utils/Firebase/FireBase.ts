@@ -12,6 +12,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import { DataType } from "../Data/Data";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDNcz7OOXlLBBg5Cu-tfKCIlkLA9TwBpMg",
@@ -72,7 +73,7 @@ export const loginWithEmailAndPassword = async (
   }
 };
 
-export const getAllUsers = async () => {
+export const getAllUsers = async (): Promise<DataType[]> => {
   const querySnapshot = query(collection(dataBase, "Player"));
   const docs = await getDocs(querySnapshot);
   const playerData = docs.docs[0].data().data;
